@@ -1,0 +1,342 @@
+/* General Body Styling */
+body {
+    font-family: 'Inter', 'Arial', sans-serif; /* Modern, clean font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Light, neutral background */
+    color: #333; /* Default text color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container for centering content */
+.container {
+    width: 90%;
+    max-width: 900px; /* Max width for larger screens */
+    margin: 0 auto; /* Centering the container */
+    padding: 20px;
+}
+
+/* Main Header Styling */
+.header-main {
+    background-color: #007bff; /* Primary color - blue */
+    color: #ffffff;
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-main h1 {
+    margin: 0;
+    font-size: 2.5em; /* Larger font for main title */
+    font-weight: 700;
+}
+
+.header-main .tagline {
+    margin-top: 5px;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+/* Tab Navigation Styling */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #dee2e6; /* Separator line */
+}
+
+.tab-button {
+    padding: 12px 25px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #495057; /* Subdued color for inactive tabs */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 3px solid transparent; /* For active state indicator */
+    margin: 0 5px;
+}
+
+.tab-button:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.tab-button.active {
+    color: #007bff; /* Active tab color */
+    border-bottom: 3px solid #007bff; /* Active tab indicator */
+    font-weight: 600;
+}
+
+/* Calculator Section Styling */
+.calculator-section {
+    background-color: #ffffff; /* White background for sections */
+    padding: 25px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    margin-bottom: 30px;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.calculator-section.active-tab {
+    display: block; /* Show active tab */
+}
+
+.calculator-section h2 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.calculator-section p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Element Styling */
+.subject-row, .semester-row {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between inputs */
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Slight background for rows */
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="number"] {
+    flex-grow: 1; /* Allow inputs to take available space */
+    padding: 12px;
+    border: 1px solid #ced4da; /* Standard border */
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #007bff; /* Highlight on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus glow */
+    outline: none;
+}
+
+/* Specific widths for certain inputs */
+.subject-name { flex-basis: 40%; }
+.subject-credits, .subject-grade { flex-basis: 20%; }
+.semester-sgpa, .semester-credits { flex-basis: 40%; }
+
+
+/* Button Styling */
+.form-actions {
+    display: flex;
+    justify-content: space-between; /* Align buttons */
+    align-items: center;
+    margin-top: 25px;
+    gap: 10px; /* Gap between buttons */
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    border: none;
+    font-weight: 500;
+}
+
+/* Primary calculate button */
+.calculate-btn {
+    background-color: #28a745; /* Green for calculate */
+    color: white;
+}
+.calculate-btn:hover {
+    background-color: #218838; /* Darker green */
+}
+
+/* Add button */
+#add-subject-btn, #add-semester-btn {
+    background-color: #007bff; /* Blue for add */
+    color: white;
+}
+#add-subject-btn:hover, #add-semester-btn:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+/* Reset button */
+#reset-sgpa-btn, #reset-cgpa-btn {
+    background-color: #ffc107; /* Yellow for reset */
+    color: #212529;
+}
+#reset-sgpa-btn:hover, #reset-cgpa-btn:hover {
+    background-color: #e0a800; /* Darker yellow */
+}
+
+/* Remove button */
+.remove-subject-btn, .remove-semester-btn {
+    background-color: #dc3545; /* Red for remove */
+    color: white;
+    padding: 10px 15px; /* Slightly smaller */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+.remove-subject-btn:hover, .remove-semester-btn:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+button:active {
+    transform: translateY(1px); /* Slight press effect */
+}
+
+/* Result Display Styling */
+.result-display {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #e9ecef; /* Light grey for result area */
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #ced4da;
+}
+
+.result-display h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #17a2b8; /* Info color for result text */
+}
+
+.result-display span {
+    font-weight: bold;
+    color: #007bff; /* Primary color for the value */
+}
+
+/* Instructions Section Styling */
+.instructions-section {
+    background-color: #fdfdfe;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    border: 1px dashed #007bff; /* Dashed border for distinction */
+}
+
+.instructions-section h3 {
+    color: #007bff;
+    margin-top: 0;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+.instructions-section h4 {
+    color: #0056b3;
+    margin-top: 15px;
+}
+.instructions-section ul {
+    padding-left: 20px;
+    list-style-type: disc; /* Standard bullets */
+}
+.instructions-section li {
+    margin-bottom: 5px;
+    color: #444;
+}
+
+/* Footer Styling */
+.footer-main {
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: auto; /* Pushes footer to the bottom */
+    background-color: #343a40; /* Dark footer */
+    color: #f8f9fa; /* Light text for footer */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.footer-main p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* Error message styling (to be used by JavaScript) */
+.error-message {
+    color: #dc3545; /* Red for error messages */
+    font-size: 0.85em;
+    margin-top: 2px;
+    display: block; /* Ensure it takes its own line */
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .header-main h1 {
+        font-size: 2em;
+    }
+    .tab-button {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+    .subject-row, .semester-row {
+        flex-direction: column; /* Stack inputs vertically on small screens */
+        align-items: stretch; /* Stretch items to full width */
+    }
+    .subject-row input, .semester-row input,
+    .subject-row button, .semester-row button {
+        width: 100%; /* Full width for stacked items */
+        margin-bottom: 8px; /* Add some space between stacked items */
+    }
+    .subject-row button:last-child, .semester-row button:last-child {
+        margin-bottom: 0;
+    }
+    .form-actions {
+        flex-direction: column; /* Stack action buttons */
+    }
+    .form-actions button {
+        width: 100%;
+        margin-bottom: 10px; /* Space between stacked buttons */
+    }
+    .form-actions button:last-child {
+        margin-bottom: 0;
+    }
+    input[type="text"], input[type="number"] {
+        font-size: 0.95em; /* Slightly smaller font on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    .header-main h1 {
+        font-size: 1.8em;
+    }
+    .header-main .tagline {
+        font-size: 1em;
+    }
+    .tab-nav {
+        flex-direction: column; /* Stack tabs for very small screens */
+    }
+    .tab-button {
+        width: 100%;
+        margin-bottom: 5px;
+        border-bottom-width: 2px; /* Thinner border for stacked tabs */
+    }
+    .tab-button.active {
+         border-bottom-width: 3px;
+    }
+    .calculator-section h2 {
+        font-size: 1.5em;
+    }
+    .result-display h3 {
+        font-size: 1.3em;
+    }
+}
+
+/* End of member2.css */
